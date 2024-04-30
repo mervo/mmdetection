@@ -18,6 +18,16 @@
   </div>
   <div>&nbsp;</div>
 
+  ```commandline
+python demo/image_demo.py demo/demo.jpg /configs/hrnet/faster-rcnn_hrnetv2p-w40_2x_coco.py weights/faster_rcnn_hrnetv2p_w40_2x_coco_20200512_161033-0f236ef4.pth
+python tools/train.py configs/hrnet/faster-rcnn_hrnetv2p-w40_2x_coco.py --work-dir weights --cfg-options load_from=weights/faster_rcnn_hrnetv2p_w40_2x_coco_20200512_161033-0f236ef4.pth
+python demo/large_image_demo.py \
+    /data/datasets/vha/multiscale_plab.png \
+    /data/datasets/vha/yolo-ms-20240429T071650Z-001/yolo-ms/yoloms-se_syncbn_fast_8xb8-300e_coco.py \
+    /data/datasets/vha/yolo-ms-20240429T071650Z-001/yolo-ms/epoch_290.pth \
+    --show --score-thr 0.3 --patch-size 512 --patch-overlap-ratio 0.2 --merge-iou-thr 0.4 
+```
+
 [![PyPI](https://img.shields.io/pypi/v/mmdet)](https://pypi.org/project/mmdet)
 [![docs](https://img.shields.io/badge/docs-latest-blue)](https://mmdetection.readthedocs.io/en/latest/)
 [![badge](https://github.com/open-mmlab/mmdetection/workflows/build/badge.svg)](https://github.com/open-mmlab/mmdetection/actions)

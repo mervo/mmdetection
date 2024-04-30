@@ -1,3 +1,5 @@
+max_epochs = 300
+
 # model settings
 model = dict(
     type='FasterRCNN',
@@ -50,7 +52,7 @@ model = dict(
             in_channels=256,
             fc_out_channels=1024,
             roi_feat_size=7,
-            num_classes=80,
+            num_classes=3,
             bbox_coder=dict(
                 type='DeltaXYWHBBoxCoder',
                 target_means=[0., 0., 0., 0.],
